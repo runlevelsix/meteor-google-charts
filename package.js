@@ -1,18 +1,21 @@
 Package.describe({
-  name: 'rafaelhdr:google-charts',
+  name: 'rl6:meteor-google-charts',
+  version: '0.0.3',
   summary: 'Easy Google Charts for Meteor',
-  version: '0.0.2',
-  git: 'https://github.com/rafaelhdr/meteor-google-charts.git'
+  git: 'https://github.com/runlevelsix/meteor-google-charts.git',
+  documentation: 'README.md'
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('1.0.2.1');
-  api.addFiles('rafaelhdr:google-charts.js');
+  api.versionsFrom('1.2.1');
+  api.use('ecmascript');
+  api.addFiles('meteor-google-charts.js');
   api.export(['drawChart'], 'client');
 });
 
 Package.onTest(function(api) {
+  api.use('ecmascript');
   api.use('tinytest');
-  api.use('rafaelhdr:google-charts');
-  api.addFiles('rafaelhdr:google-charts-tests.js');
+  api.use('rl6:meteor-google-charts');
+  api.addFiles('meteor-google-charts-tests.js');
 });
